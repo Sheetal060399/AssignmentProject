@@ -26,39 +26,32 @@ import java.util.Scanner;
 		return 0;
 	}
  }
- public class BankDetails{
+ class BankDetails{
 	 public static void main(String[] args) {
-		 System.out.println("\t\tUser details");
+         System.out.println("\t\tUser details");
+         
 		 ArrayList<Bank1> Bank = new ArrayList<>();
-			int i = 0 ;
-            while(i<=2) {
-				Scanner sc = new Scanner(System.in);
+			for(int i =0;i<3;i++){
+                Scanner sc = new Scanner(System.in);
 				System.out.println("enter the id of the customer");
 				int i1 = sc.nextInt();
 				sc.nextLine();
 				System.out.println("enter the name of the customer");
 				String n = sc.nextLine();
 				System.out.println("enter the balance of the customer");
-				float b = sc.nextFloat();
-				Bank.add(new Bank1  ( i1, n,  b));
-				i++;1
+                float b = sc.nextFloat();
+                Bank1 bank = new Bank1  ( i1, n,  b);
+				Bank.add(bank);
+				
+            }
 				
 						
-			}
-            for(int i1=0;i1<Bank.size();i1++) {
-            	Bank1 Bank2 = Bank.get(i1);
+			
+            for(int i=0;i<Bank.size();i++) {
+            	Bank1 Bank2 = Bank.get(i);
             	if(Bank2.balance>100)
             	{
-            		System.out.println(Bank2.id +""+ Bank2.name +"" +Bank2.balance);
-            	
-            	
-           
-            	
+                    System.out.println(Bank2.id +"  "+ Bank2.name +"  " +Bank2.balance);
+                }
             }
-            	
-            }
-	 }
- }
-			
-			
-			
+        }}
